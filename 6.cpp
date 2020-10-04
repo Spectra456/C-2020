@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
         }
 
     auto start_omp = std::chrono::high_resolution_clock::now(); 
-    #pragma omp critical  
+    #pragma omp parallel  
     for(i=0; i < array_size; i++) {
     res_omp[i] = isPrime(arr[i]);
     //std::cout << arr[i] << " - is prime number: "  << std::boolalpha << res_omp[i] << std::endl;

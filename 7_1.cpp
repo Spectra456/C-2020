@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     omp_set_num_threads(2);
     //#pragma omp parallel
     //{ 
-    #pragma omp parallel for
+    #pragma omp criticial
     for (int i=1; i<N; i++) {      
     x[i] = x[i-1]*x[i-1];
     y[i] = x[i] /y[i-1];
